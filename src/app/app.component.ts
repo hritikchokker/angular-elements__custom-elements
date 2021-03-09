@@ -10,9 +10,9 @@ import { PopupService } from "./popup/popup.service";
 })
 export class AppComponent {
   name = "Angular " + VERSION.major;
-  constructor(injector: Injector, public popup: PopupService) {
+  constructor(public popup: PopupService) {
     // Convert `PopupComponent` to a custom element.
-    const PopupElement = createCustomElement(PopupComponent, { injector });
+    const PopupElement = createCustomElement(PopupComponent, { injector:this.popup.injector });
     // Register the custom element with the browser.
     customElements.define("popup-element", PopupElement);
   }

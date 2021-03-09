@@ -5,9 +5,10 @@ import { PopupComponent } from './popup.component';
 
 @Injectable()
 export class PopupService {
-  constructor(private injector: Injector,
+  constructor(public injector: Injector,
               private applicationRef: ApplicationRef,
-              private componentFactoryResolver: ComponentFactoryResolver) {}
+              private componentFactoryResolver: ComponentFactoryResolver
+              ) {}
 
   // Previous dynamic-loading method required you to set up infrastructure
   // before adding the popup to the DOM.
